@@ -45,133 +45,134 @@ class _ResultPageState extends State<ResultPage> {
         children: [
           GestureDetector(
             child: Column(
-              children: [
-                Expanded(
-                  child: Column(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(70),
+                              bottomLeft: Radius.circular(70),
+                            ),
+                            image: DecorationImage(
+                              image: AssetImage("assets/img_5.png"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          height: MediaQuery.of(context).size.height * 0.32,
+                          child: Center(
+                            child: Container(
+                              height: 140,
+                              width: 140,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Image.asset(image,fit: BoxFit.cover,)
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 210),
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 20),
+                          height: 150,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: itemresult(
+                                  "assets/img_6.png",
+                                  "${widget.trueAnswerCount}",
+                                  "To'g'ri",
+                                ),
+                              ),
+                              Expanded(
+                                child: itemresult("assets/img_7.png", "${widget.quizs.length-widget.trueAnswerCount}", "Xato"),
+                              ),
+                              Expanded(
+                                child: itemresult(
+                                  "assets/img_8.png",
+                                  "${widget.timeSpent} sekond",
+                                  "Vaqt",
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Column(
                     children: [
                       Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(70),
-                            bottomLeft: Radius.circular(70),
-                          ),
-                          image: DecorationImage(
-                            image: AssetImage("assets/img_5.png"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        height: MediaQuery.of(context).size.height * 0.32,
-                        child: Center(
-                          child: Container(
-                            height: 140,
-                            width: 140,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Image.asset(image,fit: BoxFit.cover,)
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 210),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 20),
-                        height: 150,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: itemresult(
-                                "assets/img_6.png",
-                                "${widget.trueAnswerCount}",
-                                "To'g'ri",
-                              ),
-                            ),
-                            Expanded(
-                              child: itemresult("assets/img_7.png", "${widget.quizs.length-widget.trueAnswerCount}", "Xato"),
-                            ),
-                            Expanded(
-                              child: itemresult(
-                                "assets/img_8.png",
-                                "${widget.timeSpent} sekond",
-                                "Vaqt",
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      height: 66,
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                          foregroundColor: Colors.white,
-                        ),
-                        child: Text(
-                          "🔄️ Qayta urinib ko'rish",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-            
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) {
-                              return HomePage();
-                            },
-                          ),
-                        );
-                      },
-                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         height: 66,
-                        margin: EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 10,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white70,
-                          border: Border.all(
-                            width: 1,
-                            color: Colors.deepOrangeAccent,
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red,
+                            foregroundColor: Colors.white,
                           ),
-                          borderRadius: BorderRadius.circular(40),
-                        ),
-                        child: Center(
                           child: Text(
-                            "Bosh Saxifa",
+                            "🔄️ Qayta urinib ko'rish",
                             style: TextStyle(
-                              color: Colors.deepOrangeAccent,
+                              color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 30),
-              ],
-            ),
+
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) {
+                                return HomePage();
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          height: 66,
+                          margin: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 10,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white70,
+                            border: Border.all(
+                              width: 1,
+                              color: Colors.deepOrangeAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Bosh Saxifa",
+                              style: TextStyle(
+                                color: Colors.deepOrangeAccent,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 30),
+                ],
+              ),
           ),
+
           Center(
             child: Container(
               padding: EdgeInsets.all(12),
